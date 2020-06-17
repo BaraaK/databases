@@ -1,0 +1,26 @@
+{
+    "Invitee" :
+     [
+        [1,"Baraa Kolly","ALi"],
+        [2,"Amey Fowler","Charlotte"],
+        [3,"Ella","Ahmed"],
+        [4,"Sophia ","Olivia Hanks"],
+        [5,"Emily ","Luna"]
+    ],
+    "Room" :
+    [
+        [1,"125S",1],
+        [2,"43D",4],
+        [3,"533Q",5],
+        [4,"311K",3],
+        [5,"217S",2]
+    ],
+    "Meeting" :
+    [
+        [1,"Job interview","12:30","16:10",2],
+        [2,"Test","14:30","15:30",5],
+        [3,"fill the form","10:30","11:10",1],
+        [4,"Help","15:30","17:10",3],
+        [5,"Meet the manager","9:50","12:00",4]
+    ]
+}
