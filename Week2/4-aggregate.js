@@ -43,7 +43,7 @@ connection.query(
 
 //Sum of the research papers of the authors per university.
 connection.query(
-    `SELECT A.university, COUNT(RP.paper_id) AS "count of papers" FROM research_papers AS RP
+    `SELECT A.university, COUNT(DISTINCT(RP.paper_id)) AS "count of papers" FROM research_papers AS RP
     INNER JOIN authors_papers AS AP
     ON RP.paper_id = AP.paper_id
     INNER JOIN authors AS A
