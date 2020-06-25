@@ -1,0 +1,60 @@
+[
+
+    {
+        "author_id": 2,
+        "paper_id": 111
+    },
+    {
+        "author_id": 2,
+        "paper_id": 118
+    },
+    {
+        "author_id": 2,
+        "paper_id": 119
+    },
+    {
+        "author_id": 2,
+        "paper_id": 115
+    },
+    {
+        "author_id": 3,
+        "paper_id": 118
+    },
+    {
+        "author_id": 3,
+        "paper_id": 115
+    },
+    {
+        "author_id": 3,
+        "paper_id": 111
+    },
+    {
+        "author_id": 4,
+        "paper_id": 116
+    },
+    {
+        "author_id": 4,
+        "paper_id": 111
+    },
+    {
+        "author_id": 4,
+        "paper_id": 120
+    },
+    {
+        "author_id": 4,
+        "paper_id": 116
+    },
+    {
+        "author_id": 5,
+        "paper_id": 113
+    },
+    {
+        "author_id": 5,
+        "paper_id": 114
+    },
+    {
+        "author_id": 5,
+        "paper_id": 117
+    }
+
+]
