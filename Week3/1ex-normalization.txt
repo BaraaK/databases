@@ -1,0 +1,99 @@
+1- convert the table into 1NF :
+
+    member_id | member_name   | member_address | dinner_id | dinner_date | venue_code | venue_description | food_code | food_description |
++-----------+---------------+----------------+-----------+-------------+------------+-------------------+-----------+------------------+
+|         1 | Amit          | 325 Max park   | D00001001 | 2020-03-15  | B01        | Grand Ball Room   | C1        | Curry            |
+|         1 | Amit          | 325 Max park   | D00001001 | 2020-03-15  | B01        | Grand Ball Room   | C2        | Cake             |
+|         2 | Ben           | 24 Hudson lane | D00001002 | 2020-03-15  | B02        | Zoku Roof Top     | S1        | Soup             |
+|         2 | Ben           | 24 Hudson lane | D00001002 | 2020-03-15  | B02        | Zoku Roof Top     | C2        | Cake             |
+|         3 | Cristina      | 516 6th Ave    | D00001002 | 2020-03-15  | B02        | Zoku Roof Top     | S1        | Soup             |
+|         3 | Cristina      | 516 6th Ave    | D00001002 | 2020-03-15  | B02        | Zoku Roof Top     | C2        | Cake             |
+|         4 | Dan           | 89 John St     | D00001003 | 2020-03-20  | B03        | Goat Farm         | P1        | Pie	       |
+|         4 | Dan           | 89 John St     | D00001003 | 2020-03-20  | B03        | Goat Farm         | T1        | Tea              |
+|         4 | Dan           | 89 John St     | D00001003 | 2020-03-20  | B03        | Goat Farm         | M1        | Mousse           |
+|         5 | Ema           | 91 Pixar St    | D00001003 | 2020-03-20  | B03        | Goat Farm         | P1        | Pie	       |
+|         5 | Ema           | 91 Pixar St    | D00001003 | 2020-03-20  | B03        | Goat Farm         | T1        | Tea	       |
+|         5 | Ema           | 91 Pixar St    | D00001003 | 2020-03-20  | B03        | Goat Farm         | M1        | Mousse           |
+|         6 | Fatima        | 56 8th Ave     | D00001004 | 2020-03-20  | B04        | Mama's Kitchen    | F1        | Falafal          |
+|         6 | Fatima        | 56 8th Ave     | D00001004 | 2020-03-20  | B04        | Mama's Kitchen    | M1        | Mousse           |
+|         7 | Gabor         | 54 Vivaldi St  | D00001005 | 2020-02-20  | B05        | Hungry Hungary    | G1        | Goulash          |
+|         7 | Gabor         | 54 Vivaldi St  | D00001005 | 2020-02-20  | B05        | Hungry Hungary    | P2        | Pasca            |
+|         8 | Hema          | 9 Peter St     | D00001003 | 2020-03-20  | B03        | Goat Farm         | P1        | Pie              |
+|         8 | Hema          | 9 Peter St     | D00001003 | 2020-03-20  | B03        | Goat Farm         | T1        | Tea	       |
+|         8 | Hema          | 9 Peter St     | D00001003 | 2020-03-20  | B03        | Goat Farm         | M1        | Mousse           |
++-----------+---------------+----------------+-----------+-------------+------------+-------------------+-----------+------------------+
+
+2- Super key :
+	-{member_name,member_address,dinner_id,food_code}
+	-{member_address,dinner_id,venue_code,food_code}
+	-{member_id,dinner_id,food_code}
+    Candidate key:
+	-{member_address,member_name,dinner_id}
+	-{member_address,dinner_id,food_code}
+	-{member_Address,venue_code,food_code}
+	-{member_id,dinner_id}
+	-{
+    Primary key :
+	-{member_id,dinner_id}
+
+3- develop the set of 2NF tables: dinner_id ---> dinner_date (Partial Dependency)
+	dinner_id in this table is a foreign key reference to dinner table
+
+    member_id | member_name   | member_address | dinner_id  | venue_code | food_code |
++-----------+---------------+----------------+-----------+-------------+-------------+
+|         1 | Amit          | 325 Max park   | D00001001 |  B01        | C1        |
+|         1 | Amit          | 325 Max park   | D00001001 |  B01        |  C2       |
+|         2 | Ben           | 24 Hudson lane | D00001002 |  B02        | S1        | 
+|         2 | Ben           | 24 Hudson lane | D00001002 |  B02        | C2        | 
+|         3 | Cristina      | 516 6th Ave    | D00001002 |  B02        | S1        |
+|         3 | Cristina      | 516 6th Ave    | D00001002 |  B02        | C2        | 
+|         4 | Dan           | 89 John St     | D00001003 |  B03        | P1        | 
+|         4 | Dan           | 89 John St     | D00001003 |  B03        | T1        | 
+|         4 | Dan           | 89 John St     | D00001003 |  B03        | M1        |
+|         5 | Ema           | 91 Pixar St    | D00001003 |  B03        | P1        |
+|         5 | Ema           | 91 Pixar St    | D00001003 |  B03        | T1        |
+|         5 | Ema           | 91 Pixar St    | D00001003 |  B03        | M1        | 
+|         6 | Fatima        | 56 8th Ave     | D00001004 |  B04        | F1        | 
+|         6 | Fatima        | 56 8th Ave     | D00001004 |  B04        | M1        |
+|         7 | Gabor         | 54 Vivaldi St  | D00001005 |  B05        | G1        | 
+|         7 | Gabor         | 54 Vivaldi St  | D00001005 |  B05        | P2        | 
+|         8 | Hema          | 9 Peter St     | D00001003 |  B03        | P1        |
+|         8 | Hema          | 9 Peter St     | D00001003 |  B03        | T1        |
+|         8 | Hema          | 9 Peter St     | D00001003 |  B03        | M1        | 
++-----------+---------------+----------------+-----------+-------------+------------+
+
+| dinner_id | dinner_date|       dinner_id is primary key in table dinner
++-----------+-------------+
+| D00001001 | 2020-03-15  |
+| D00001002 | 2020-03-15  |
+| D00001003 | 2020-03-20  |
+| D00001004 | 2020-03-20  |
+| D00001005 | 2020-02-20  |
++--------------------------+
+
+4- develop the set of 3NF tables :
+	venue_code ----> venue_description |
+	food_code -----> food_description  | (Transitive Dependency)
+	
+	| venue_code  | venue_description |
+	+-------------+-------------------+
+	|  B01        | Grand Ball Room   |
+	|  B02        | Zoku Roof Top     |
+	|  B03        | Goat Farm         |
+	|  B04        | Mama's Kitchen    |
+	|  B05        | Hungry Hungary    |
+	+----------------------------------+
+
+	| food_code | food_description |
+	+-----------+------------------+
+	| C1        | Curry            |
+	| C2        | Cake             |
+	| S1        | Soup             |
+	| P1        | Pie	       |
+	| T1        | Tea              |
+	| M1        | Mousse           |
+	| F1        | Falafal          |
+	| G1        | Goulash          |
+	| P2        | Pasca            |
+	+-------------------------------+
+	
