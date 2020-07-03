@@ -25,7 +25,8 @@ function getPopulation(Country, name, code, cb) {
   conn.end()
 
 // 1*Example of a value that can be passed as name and code that would take advantage of SQL-injection 
-// SELECT * FROM country where name = ""  OR 1 = 1;  -- ";
+
+// SELECT * FROM country where name = ""  OR 1 = 1;  -- " and code = '';
 
 
 // 2* Rewrite the function so that it is no longer vulnerable to SQL injection
