@@ -1,0 +1,18 @@
+1- 	select * into outfile 'city.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from city;
+
+	select * into outfile 'country.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from country;
+
+	select * into outfile 'countrylanguage.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' from countrylanguage;
+
+2- Solving Error Code: 1290. The MySQL server is running with the --secure-file-priv option so it cannot execute this statement by exposrting the files where it should be (SHOW VARIABLES LIKE "secure_file_priv";)
+ 
+4-followed the steps to create Atlas account :   
+	Part 1: Create an Atlas Account.
+	Part 2: Deploy a Free Tier Cluster.
+	Part 3: Whitelist Your Connection IP Address.
+	Part 4: Create a Database User for Your Cluster.
+	Part 5: Connect to Your Cluster.
+	Part 6: Insert and View Data in Your Cluster.
+5-Import data using MongoDB compass (import csv files, each one represents a collection)
+6- Testing queries using Mongo Shell by first connecting using this command :
+	"mongodb+srv://cluster0.mxcsa.mongodb.net/baraa" --username baraa --password *********
